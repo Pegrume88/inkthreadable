@@ -3,11 +3,12 @@ html {
 }
 
 body {
-    background: url('/media/hero-image.jpeg') no-repeat center center fixed;
+    background: url('/media/hero-image-4.jpeg')  no-repeat center center;
     background-size: cover;
-    height: calc(100vh - 164px);
+    height: calc(110vh - 164px);
     color: #555;
     font-family: 'Lato';
+
 }
 
 /* from Bulma */
@@ -51,7 +52,13 @@ body {
 .main-logo-link {
     width: fit-content;
 }
+.hero-text {
+    color: white;
+    
+    
 
+    
+}
 .text-black {
     color: #000 !important;
 }
@@ -80,6 +87,6 @@ body {
     }
 
     .header-container {
-        padding-top: 164px;
+        padding-top: 150px;
     }
 }
