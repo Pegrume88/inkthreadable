@@ -1,6 +1,41 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
-    <h1 class="display-4 text-success">It works!</h1>
+<div class="js-cmsModule u-mainContainer" style="margin-top: 0px; margin-bottom: 20px;">
+    <div class="flexImages" style="text-align: left;">
+        <div class="flexImages-image u-mobileWidth--6 u-width--6 u-offset--0" style="vertical-align: top;"><a
+                href="/en/men"><img
+                    src="">
+                <div class="flexImages-overlay flexImages-overlay--black" style="text-align: center;"><span
+                        class="u-verticalAlign"></span>
+                    <div class="flexImages-overlay-inner" style="vertical-align: middle;">
+                        <h5 class="flexImages-overlay-text"><span style="">
+                                Men
+                            </span></h5>
+                    </div>
+                </div>
+            </a></div>
+        <div class="flexImages-image u-mobileWidth--6 u-width--6 u-offset--0" style="vertical-align: top;"><a
+                href="/en/women"><img
+                    src="">
+                <div class="flexImages-overlay flexImages-overlay--black" style="text-align: center;"><span
+                        class="u-verticalAlign"></span>
+                    <div class="flexImages-overlay-inner" style="vertical-align: middle;">
+                        <h5 class="flexImages-overlay-text"><span style="">
+                                Women
+                            </span></h5>
+                    </div>
+                </div>
+            </a></div>
+    </div>
+</div>
 {% endblock %}
