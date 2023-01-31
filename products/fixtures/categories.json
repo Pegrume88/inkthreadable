@@ -1,0 +1,60 @@
+[
+    {
+        "pk": 1,
+        "model": "products.category",
+        "fields": {
+            "name": "80s",
+            "friendly_name": "80's"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.category",
+        "fields": {
+            "name": "harry_potter",
+            "friendly_name": "Harry Potter"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.category",
+        "fields": {
+            "name": "star_wars",
+            "friendly_name": "Star Wars"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.category",
+        "fields": {
+            "name": "horror",
+            "friendly_name": "Horror"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.category",
+        "fields": {
+            "name": "cult_classics",
+            "friendly_name": "Cult Classics"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.category",
+        "fields": {
+            "name": "tv",
+            "friendly_name": "TV"
+        }
+    },
+  
+    {
+        "pk": 7,
+        "model": "products.category",
+        "fields": {
+            "name": "new_arrivals",
+            "friendly_name": "New Arrivals"
+        }
+    }
+   
+]
