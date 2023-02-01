@@ -25,7 +25,8 @@ class Product(models.Model):
     gender = models.CharField(max_length=200, choices=CATEGORY_CHOICES)
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
-    sku = models.CharField(max_length=254, null=True, blank=True)
+    sku = models.CharField(
+        max_length=254, null=False, blank=False, unique=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)

@@ -14,7 +14,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font">Nothing but Shirts</h2>
+                <h2 class="logo-font">Products</h2>
                 <hr class="w-50 mb-1">
             </div>
         </div>
@@ -37,9 +37,6 @@
                                 <div class="card-body pb-0">
                                     <p class="mb-0">{{ product.name }}</p>
                                 </div>
-                                <div class="card-body pb-0">
-                                    <p class="mb-0">Gender - {{ product.gender }}</p>
-                                </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
@@ -47,7 +44,7 @@
                                             {% if product.rating %}
                                                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                                             {% else %}
-                                                <small class="text-muted">Not Rated</small>
+                                                <small class="text-muted">No Rating</small>
                                             {% endif %}
                                         </div>
                                     </div>
