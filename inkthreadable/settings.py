@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_filters',
     'django.contrib.sites',
+    'crispy_forms',
 
     'allauth',
     'allauth.account',
@@ -82,6 +83,8 @@ TEMPLATES = [
         },
     },
 ]
+
+CRISPY_TEMPLATE_PACK = 'uni_form'
 
 AUTHENTICATION_BACKENDS = [
     
