@@ -14,9 +14,14 @@
     <div class="overlay"></div>
     <div class="container-fluid">
         <div class="col-lg-6 col-md-8 mx-auto">
-            <form method="get">
-                {{ product_filter.form|crispy }}
-                <button class="btn btn-sm btn-danger" type="submit">Submit</button>
+            
+            <form method="get" class="form-group mb-5">
+                <div class="mb-2">
+                    {{ product_filter.form|crispy }}
+                    
+                </div>
+                <br>
+                <button class="btn btn-primary row" type="submit">Submit</button>
             </form>
         </div>
         <div class="row">
