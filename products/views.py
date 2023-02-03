@@ -1,5 +1,7 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Product
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from .models import Product, Category
+from django.db.models import Q
+from django.contrib import messages
 from .filters import ProductFilter
 
 
@@ -13,6 +15,8 @@ def all_products(request):
     context = {
         'products': products,
         'product_filter': product_filter,
+        
+        
     }
 
     return render(request, 'products/products.html', context)

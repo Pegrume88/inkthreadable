@@ -5,4 +5,5 @@ class ProductFilter(django_filters.FilterSet):
     
     class Meta:
         model = Product
-        fields = {'gender': ['exact']}
+        fields = {'gender': ['exact'],
+                  'category': ['exact']}
