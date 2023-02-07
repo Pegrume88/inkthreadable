@@ -8,7 +8,8 @@ class ProductFilter(django_filters.FilterSet):
     class Meta:
         model = Product
         fields = {'gender': ['exact'],
-                  'category': ['exact'], }
+                  'category': ['exact'],
+                  'name': ['icontains'],}
                                         
 
 class SearchFilter(django_filters.FilterSet):
@@ -16,4 +17,4 @@ class SearchFilter(django_filters.FilterSet):
     class Meta:
         model = Product
         fields = {
-                  'name': ['icontains'], }
+                   }

@@ -15,13 +15,13 @@
     <div class="container-fluid">
         <div class="col-lg-6 col-md-8 mx-auto">
             
-            <form method="get" class="form-group mb-5">
-                <div class="mb-2">
+            <form method="get" class="form-inline ">
+                <div class="form-group mb-2 ">
                     {{ product_filter.form|crispy }}
-                    
+                    <button type="submit" class="btn btn-primary">Search</button>
                 </div>
-                <br>
-                <button class="btn btn-primary row" type="submit">Submit</button>
+               
+                
             </form>
         </div>
         <div class="row">
@@ -67,8 +67,8 @@
                                     <div class="row">
                                         <div class="col">
                                             <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
-                                            {% if product.rating %}
-                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                            {% if product.total_rating %}
+                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.total_rating }} / 5</small>
                                             {% else %}
                                                 <small class="text-muted">Not Rated</small>
                                             {% endif %}

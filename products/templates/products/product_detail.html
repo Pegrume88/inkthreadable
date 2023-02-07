@@ -46,8 +46,8 @@
                     {% endif %}
                     
                     <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
-                    {% if product.rating %}
-                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                    {% if product.total_rating %}
+                        <small class="text-muted"><i class="fas fa-star mr-1"></i>rating-{{ product.total_rating }} / 5</small>
                     {% else %}
                         <small class="text-muted">No Rating</small>
                     {% endif %}
