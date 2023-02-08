@@ -51,16 +51,14 @@
                                 </div>
                                 {% if product.category %}
                                 <p class="small mt-1 mb-0">
-                                    <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                                        <i class="fas fa-tag mr-1"></i> Category - {{ product.category.friendly_name }}
-                                    </a>
+                                    <i class="fas fa-tag mr-1"></i> Category - {{ product.category.friendly_name }}
+                                    
                                 </p>
                                 {% endif %}
                                 {% if product.gender %}
                                 <p class="mb-0">
-                                    <a class="text-muted" href="{% url 'products' %}?products={{ product.gender }}">
-                                        <i class="fas fa-tag mr-1"></i> Gender - {{ product.gender }}
-                                    </a>
+                                    <i class="fas fa-tag mr-1"></i> Gender - {{ product.gender }}
+                                    
                                 </p>
                                 {% endif %}
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
