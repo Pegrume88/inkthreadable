@@ -2,19 +2,36 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import Product, Category
 from django.db.models import Q
 from django.contrib import messages
-from .filters import ProductFilter
+from .filters import ProductFilter, ProductCategoryFilter, SearchFilter
 
 
+def category_products(request, category_id):
+    
+    products = Product.objects.filter(category__pk=category_id)
+    product_filter = ProductCategoryFilter(request.GET, queryset=products)
+    
+    
+    context = {
+        'products': products,
+        'product_filter': product_filter,
+        
+        
+        
+    }
 
+    return render(request, 'products/products.html', context)
+    
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
     products = Product.objects.all()
     product_filter = ProductFilter(request.GET, queryset=products)
+    search_filter = SearchFilter(request.GET, queryset=products)
     
     context = {
         'products': products,
         'product_filter': product_filter,
+        'search_filter': search_filter,
         
         
     }

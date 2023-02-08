@@ -51,7 +51,8 @@
                                 </div>
                                 {% if product.category %}
                                 <p class="small mt-1 mb-0">
-                                    <i class="fas fa-tag mr-1"></i> Category - {{ product.category.friendly_name }}
+                                    <a href="{% url 'category_products' product.category.pk %}"><i class="fas fa-tag mr-1"></i> Category - {{ product.category.friendly_name }}</a>
+                                    
                                     
                                 </p>
                                 {% endif %}
