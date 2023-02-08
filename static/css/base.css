@@ -4,11 +4,41 @@ html {
 
 body {
     background: url('/media/hero-image-4.jpeg')  no-repeat center center;
+    background-color: white;
     background-size: cover;
     height: calc(110vh - 164px);
     color: #555;
     font-family: 'Lato';
 
+}
+
+
+/* nav bar */
+nav {
+    background-color: black;
+    
+}
+.nav-text {
+    color: white;
+}
+
+.navbar-toggler {
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+/* home page */
+.highlightme {
+    background-color: rgb(214, 49, 49);
+}
+.home-text {
+    color: white;
+    
+    
 }
 
 /* from Bulma */
@@ -47,14 +77,14 @@ body {
 /* ----------------------------- */
 .logo-font {
     text-transform: uppercase;
-    color: #000;
+    
 }
 
 .main-logo-link {
     width: fit-content;
 }
 .hero-text {
-    color: white;
+    color: black;
     
     
 
@@ -74,7 +104,7 @@ body {
 	top: 0;
 	left: 0;
 	position: fixed;
-	background: white;
+	background: rgb(242, 238, 232);
 	z-index: -1;
 }
 

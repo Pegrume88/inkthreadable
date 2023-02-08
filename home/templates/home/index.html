@@ -12,24 +12,17 @@
 {% block content %}
 
     <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-5 col-md-6 my-auto">
-                <h4 class="display-4 hero-text">
-                    Browse our collection of vintage pop culture T-Shirts featuring tv & movie
-                </h4>
-                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                    <div class="btn-group mr-2" role="group" aria-label="First group">
-                        <h4>
-                            <a href="" class="his-her-button btn btn-lg rounded-0 text-uppercase py-3">his</a>
-                        </h4>
-                    </div>
-                    <div class="btn-group mr-2" role="group" aria-label="Second group">
-                        <h4>
-                            <a href="" class="his-her-button btn btn-lg rounded-0 text-uppercase py-3">hers</a>
-                        </h4>
-                    </div>
+        <div class="row  justify-content-center h-100">
+            <div class="col-7 col-md-6 my-auto">
+                <h1 class="display-4 home-text">
+                    <span class="highlightme">The best vintage Shirts are here!</span>
+                    
+                </h1>
+                <div class="my-5">
+                    <h4>
+                        <a href="{% url 'products' %}" class="his-her-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
+                    </h4>
                 </div>
-                
             </div>
         </div>
     </div>
