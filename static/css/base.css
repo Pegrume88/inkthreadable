@@ -53,6 +53,11 @@ nav {
 
 
 /* buttons */
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 .his-her-button {
     background: black;
     color: white;
