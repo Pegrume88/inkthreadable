@@ -63,7 +63,7 @@ def adjust_cart(request, item_id):
             del cart[item_id]['items_by_size'][size]
             if not cart[item_id]['items_by_size']:
                 cart.pop(item_id)
-            messages.success(request, f'Removed size {size.upper()} {product.name} from your bag')
+            messages.success(request, f'Removed size {size.upper()} {product.name} from your cart')
     else:
         if quantity > 0:
             cart[item_id] = quantity
@@ -94,7 +94,7 @@ def remove_from_cart(request, item_id):
             messages.success(request, f'Removed size {size.upper()} {product.name} from your cart')
         else:
             cart.pop(item_id)
-            messages.success(request, f'Removed {product.name} from your bag')
+            messages.success(request, f'Removed {product.name} from your cart')
 
         request.session['cart'] = cart
         return HttpResponse(status=200)
