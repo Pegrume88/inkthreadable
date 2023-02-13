@@ -1,6 +1,6 @@
 """Checkout Models"""
 import uuid
-
+import stripe
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
@@ -82,6 +82,7 @@ class OrderLineItem(models.Model):
     lineitem_total = models.DecimalField(
         max_digits=7, decimal_places=2, null=False, blank=False,
         editable=False)
+    product_size = models.CharField(max_length=2, null=True, blank=True)
 
     def save(self, *args, **kwargs):
         """
