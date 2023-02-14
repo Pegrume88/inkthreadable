@@ -3,13 +3,12 @@ from .models import Product, Category
 from django.db.models import Q
 from django.contrib import messages
 from .filters import ProductFilter, ProductCategoryFilter, SearchFilter
-
+from .forms import ProductForm
 
 def category_products(request, category_id):
     
     products = Product.objects.filter(category__pk=category_id)
     product_filter = ProductCategoryFilter(request.GET, queryset=products)
-    
     
     context = {
         'products': products,
@@ -82,3 +81,13 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+def add_product(request):
+    """ Add a product to the store """
+    form = ProductForm()
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
