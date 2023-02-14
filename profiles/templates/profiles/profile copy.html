@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}Inkthreadbale | Profile {% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Profile Settings</h4>
+                </div>
+                <div class="row mt-2">
+                    <p>Default Delivery Information</p>
+                    <form class="form-control mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <div class="mt-5 text-center">
+                            <button class="btn btn-primary profile-button" type="button">Save
+                            Profile</button>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 py-5">
+                    <p>Order History</p>
+                    <div class="order-history table-responsive">
+                        <table class="table table-sm table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>Order Number</th>
+                                    <th>Date</th>
+                                    <th>Order Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for order in orders %}
+                                <tr>
+                                    <td class="order-number">
+                                        <a href="{% url 'order_history' order.order_number %}"
+                                            title="{{ order.order_number }}">
+                                            {{ order.order_number|truncatechars:6 }}
+                                        </a>
+                                    </td>
+                                    <td>{{ order.date }}</td>
+                                    <td>€{{ order.grand_total }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script src="{% static 'profiles/js/countryfield.js' %}"></script>
+{% endblock %}
