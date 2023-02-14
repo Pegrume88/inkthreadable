@@ -9,6 +9,8 @@ from cart.contexts import cart_contents
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from products.models import Product
+from profiles.models import UserProfile
+from profiles.forms import UserProfileForm
 
 @require_POST
 def cache_checkout_data(request):
@@ -122,11 +124,11 @@ def checkout_success(request, order_number):
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
-        # Attach the user's profile to the order
+        # Attach the user profile data to the order
         order.user_profile = profile
         order.save()
 
-        # Save the user's info
+        # Save the user information
         if save_info:
             profile_data = {
                 'default_phone_number': order.phone_number,
