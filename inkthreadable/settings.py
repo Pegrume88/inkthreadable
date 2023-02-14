@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+import dj_database_url
 from pathlib import Path
 
 
@@ -30,7 +31,7 @@ SECRET_KEY = 'django-insecure-mky*ax94l*n8fvkl!jrh*5(+y7nrq%j-0+0ljo_mwx!!atl1yk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['inkthreadable.onrender.com']
 
 
 # Application definition
@@ -144,7 +145,6 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
