@@ -26,6 +26,7 @@ def profile(request):
 
     template = 'profiles/profile.html'
     context = {
+        'profile': profile,
         'form': form,
         'orders': orders,
         'on_profile_page': True
