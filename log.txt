@@ -1,0 +1,85 @@
+Feb 15 06:10:47 PM  ==> Cloning from https://github.com/Pegrume88/inkthreadable...
+Feb 15 06:10:50 PM  ==> Checking out commit bfc1eb223d381b7bb37268bda4053b43d9fd5456 in branch main
+Feb 15 06:10:53 PM  ==> Using Python version: 3.7.10
+Feb 15 06:10:55 PM  ==> Running build command 'pip install -r requirements.txt'...
+Feb 15 06:10:56 PM  Collecting asgiref==3.6.0
+Feb 15 06:10:56 PM    Downloading asgiref-3.6.0-py3-none-any.whl (23 kB)
+Feb 15 06:10:56 PM  Collecting boto3==1.26.71
+Feb 15 06:10:56 PM    Downloading boto3-1.26.71-py3-none-any.whl (132 kB)
+Feb 15 06:10:57 PM  Collecting botocore==1.29.71
+Feb 15 06:10:57 PM    Downloading botocore-1.29.71-py3-none-any.whl (10.4 MB)
+Feb 15 06:10:58 PM  Collecting dj-database-url==0.5.0
+Feb 15 06:10:58 PM    Downloading dj_database_url-0.5.0-py2.py3-none-any.whl (5.5 kB)
+Feb 15 06:10:58 PM  Collecting Django==3.2
+Feb 15 06:10:58 PM    Downloading Django-3.2-py3-none-any.whl (7.9 MB)
+Feb 15 06:10:59 PM  Collecting django-allauth==0.41.0
+Feb 15 06:10:59 PM    Downloading django-allauth-0.41.0.tar.gz (545 kB)
+Feb 15 06:10:59 PM  Collecting django-countries==7.5.1
+Feb 15 06:10:59 PM    Downloading django_countries-7.5.1-py3-none-any.whl (843 kB)
+Feb 15 06:11:00 PM  Collecting django-crispy-forms==1.14.0
+Feb 15 06:11:00 PM    Downloading django_crispy_forms-1.14.0-py3-none-any.whl (133 kB)
+Feb 15 06:11:00 PM  Collecting django-filter==22.1
+Feb 15 06:11:00 PM    Downloading django_filter-22.1-py3-none-any.whl (80 kB)
+Feb 15 06:11:00 PM  Collecting django-storages==1.13.2
+Feb 15 06:11:00 PM    Downloading django_storages-1.13.2-py3-none-any.whl (46 kB)
+Feb 15 06:11:00 PM  Collecting gunicorn==20.1.0
+Feb 15 06:11:00 PM    Downloading gunicorn-20.1.0-py3-none-any.whl (79 kB)
+Feb 15 06:11:00 PM  Collecting jmespath==1.0.1
+Feb 15 06:11:00 PM    Downloading jmespath-1.0.1-py3-none-any.whl (20 kB)
+Feb 15 06:11:00 PM  Collecting oauthlib==3.2.2
+Feb 15 06:11:00 PM    Downloading oauthlib-3.2.2-py3-none-any.whl (151 kB)
+Feb 15 06:11:00 PM  Collecting Pillow==9.4.0
+Feb 15 06:11:00 PM    Downloading Pillow-9.4.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+Feb 15 06:11:01 PM  Collecting psycopg2==2.9.5
+Feb 15 06:11:01 PM    Downloading psycopg2-2.9.5.tar.gz (384 kB)
+Feb 15 06:11:01 PM  Collecting python3-openid==3.2.0
+Feb 15 06:11:01 PM    Downloading python3_openid-3.2.0-py3-none-any.whl (133 kB)
+Feb 15 06:11:01 PM  Collecting pytz==2022.7.1
+Feb 15 06:11:01 PM    Downloading pytz-2022.7.1-py2.py3-none-any.whl (499 kB)
+Feb 15 06:11:01 PM  Collecting requests-oauthlib==1.3.1
+Feb 15 06:11:01 PM    Downloading requests_oauthlib-1.3.1-py2.py3-none-any.whl (23 kB)
+Feb 15 06:11:01 PM  Collecting s3transfer==0.6.0
+Feb 15 06:11:01 PM    Downloading s3transfer-0.6.0-py3-none-any.whl (79 kB)
+Feb 15 06:11:01 PM  Collecting sqlparse==0.4.3
+Feb 15 06:11:01 PM    Downloading sqlparse-0.4.3-py3-none-any.whl (42 kB)
+Feb 15 06:11:02 PM  Collecting stripe==5.1.1
+Feb 15 06:11:02 PM    Downloading stripe-5.1.1-py2.py3-none-any.whl (253 kB)
+Feb 15 06:11:02 PM  Collecting typing-extensions; python_version < "3.8"
+Feb 15 06:11:02 PM    Downloading typing_extensions-4.5.0-py3-none-any.whl (27 kB)
+Feb 15 06:11:02 PM  Collecting python-dateutil<3.0.0,>=2.1
+Feb 15 06:11:02 PM    Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+Feb 15 06:11:02 PM  Collecting urllib3<1.27,>=1.25.4
+Feb 15 06:11:02 PM    Downloading urllib3-1.26.14-py2.py3-none-any.whl (140 kB)
+Feb 15 06:11:02 PM  Collecting requests
+Feb 15 06:11:02 PM    Downloading requests-2.28.2-py3-none-any.whl (62 kB)
+Feb 15 06:11:02 PM  Requirement already satisfied: setuptools>=3.0 in ./.venv/lib/python3.7/site-packages (from gunicorn==20.1.0->-r requirements.txt (line 11)) (47.1.0)
+Feb 15 06:11:02 PM  Collecting defusedxml
+Feb 15 06:11:02 PM    Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+Feb 15 06:11:02 PM  Collecting six>=1.5
+Feb 15 06:11:02 PM    Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+Feb 15 06:11:02 PM  Collecting charset-normalizer<4,>=2
+Feb 15 06:11:02 PM    Downloading charset_normalizer-3.0.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (170 kB)
+Feb 15 06:11:02 PM  Collecting certifi>=2017.4.17
+Feb 15 06:11:02 PM    Downloading certifi-2022.12.7-py3-none-any.whl (155 kB)
+Feb 15 06:11:02 PM  Collecting idna<4,>=2.5
+Feb 15 06:11:02 PM    Downloading idna-3.4-py3-none-any.whl (61 kB)
+Feb 15 06:11:02 PM  Using legacy setup.py install for django-allauth, since package 'wheel' is not installed.
+Feb 15 06:11:02 PM  Using legacy setup.py install for psycopg2, since package 'wheel' is not installed.
+Feb 15 06:11:03 PM  Installing collected packages: typing-extensions, asgiref, jmespath, six, python-dateutil, urllib3, botocore, s3transfer, boto3, dj-database-url, sqlparse, pytz, Django, defusedxml, python3-openid, oauthlib, charset-normalizer, certifi, idna, requests, requests-oauthlib, django-allauth, django-countries, django-crispy-forms, django-filter, django-storages, gunicorn, Pillow, psycopg2, stripe
+Feb 15 06:11:07 PM      Running setup.py install for django-allauth: started
+Feb 15 06:11:08 PM      Running setup.py install for django-allauth: finished with status 'done'
+Feb 15 06:11:08 PM      Running setup.py install for psycopg2: started
+Feb 15 06:11:14 PM      Running setup.py install for psycopg2: finished with status 'done'
+Feb 15 06:11:15 PM  Successfully installed Django-3.2 Pillow-9.4.0 asgiref-3.6.0 boto3-1.26.71 botocore-1.29.71 certifi-2022.12.7 charset-normalizer-3.0.1 defusedxml-0.7.1 dj-database-url-0.5.0 django-allauth-0.41.0 django-countries-7.5.1 django-crispy-forms-1.14.0 django-filter-22.1 django-storages-1.13.2 gunicorn-20.1.0 idna-3.4 jmespath-1.0.1 oauthlib-3.2.2 psycopg2-2.9.5 python-dateutil-2.8.2 python3-openid-3.2.0 pytz-2022.7.1 requests-2.28.2 requests-oauthlib-1.3.1 s3transfer-0.6.0 six-1.16.0 sqlparse-0.4.3 stripe-5.1.1 typing-extensions-4.5.0 urllib3-1.26.14
+Feb 15 06:11:15 PM  WARNING: You are using pip version 20.1.1; however, version 23.0 is available.
+Feb 15 06:11:15 PM  You should consider upgrading via the '/opt/render/project/src/.venv/bin/python -m pip install --upgrade pip' command.
+Feb 15 06:11:15 PM  ==> Generating container image from build. This may take a few minutes...
+Feb 15 06:12:13 PM  ==> Uploading build...
+Feb 15 06:12:31 PM  ==> Build uploaded in 14s
+Feb 15 06:12:31 PM  ==> Build successful 🎉
+Feb 15 06:12:31 PM  ==> Deploying...
+Feb 15 06:12:53 PM  ==> Starting service with 'gunicorn inkthreadable.wsgi'
+Feb 15 06:13:00 PM  [2023-02-15 18:13:00 +0000] [53] [INFO] Starting gunicorn 20.1.0
+Feb 15 06:13:00 PM  [2023-02-15 18:13:00 +0000] [53] [INFO] Listening at: http://0.0.0.0:10000 (53)
+Feb 15 06:13:00 PM  [2023-02-15 18:13:00 +0000] [53] [INFO] Using worker: sync
+Feb 15 06:13:00 PM  [2023-02-15 18:13:00 +0000] [56] [INFO] Booting worker with pid: 56
