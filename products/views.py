@@ -76,7 +76,28 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    
+    if request.method == 'POST':
+        review_rating = request.POST.get('review_rating', 3)
+        review_text = request.POST.get('review_text', '')
 
+        if review_text:
+            reviews = Review.objects.filter(created_by=request.user, product=product)
+
+            if reviews.count() > 0:
+                review = reviews.first()
+                review.review_rating = review_rating
+                review.creview_text = review_text
+                review.save()
+            else:
+                review = Review.objects.create(
+                    product=product,
+                    review_rating=review_rating,
+                    review_text=review_text,
+                    created_by=request.user
+                )
+
+            return redirect('product', slug=slug)
     context = {
         'product': product,
     }

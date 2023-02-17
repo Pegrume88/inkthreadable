@@ -42,7 +42,8 @@ class Product(models.Model):
 
 class Review(models.Model):
 	customer = models.ForeignKey(User, on_delete=models.CASCADE)
-	product = models.ForeignKey(Product, on_delete=models.CASCADE)
-	review_star = models.IntegerField()
+	product = models.ForeignKey(Product, related_name='reviews', on_delete=models.CASCADE)
+	review_rating = models.IntegerField(default=3)
 	review_text = models.TextField()
-	created = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    

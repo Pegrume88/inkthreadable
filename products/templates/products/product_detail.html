@@ -115,6 +115,14 @@
                         </div>
                     </form>
                 </div>
+                {% for review in product.reviews.all %}
+                    <div class="px-4 py-6 bg-gray-100 rounded-xl mb-4">
+                        <strong>Rating:</strong> {{ review.review_rating }}/6<br>
+                        <strong>Date:</strong> {{ review.created_at|date:"Y-m-d" }}<br>
+                        <strong>Comment:</strong><br>
+                        {{ review.review_text }}
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>
