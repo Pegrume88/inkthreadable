@@ -7,7 +7,6 @@ class ProductAdmin(admin.ModelAdmin):
         'name',
         'category',
         'price',
-        'total_rating',
         'image',
     )
 
@@ -21,8 +20,19 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class ReviewAdmin(admin.ModelAdmin):
     list_display = (
-        'review_star',
+        'sku',
+        'name',
+        'comment',
+        'review_rating',
+        'created_at',
+        'created_by',
     )
+    readonly_fields = [
+        'created_at',
+    ]
+
+
+    
 
 
 admin.site.register(Product, ProductAdmin)

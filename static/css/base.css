@@ -2,6 +2,11 @@ html {
     height: 100%;
 }
 
+footer {
+    background-color: whitesmoke;
+    border-color: 2px black;
+    z-index: 1;
+}
 body {
     background: url('/media/hero-image-4.jpeg')  no-repeat center center;
     background-color: white;
@@ -129,6 +134,13 @@ nav {
 .btn-black:focus {
     background: #222;
     color: white;
+}
+
+/* Product details*/
+.review-container {
+    background-color: #fff;
+    color: black;
+    z-index: 9999;
 }
 
 /* Product Form */
