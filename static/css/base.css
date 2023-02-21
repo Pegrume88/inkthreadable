@@ -75,6 +75,10 @@ nav {
     background-color: black;
     
 }
+
+.logo-image {
+    height: 90px;
+}
 .nav-text {
     color: white;
 }
