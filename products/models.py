@@ -29,6 +29,8 @@ class Product(models.Model):
         max_length=254, null=False, blank=False, unique=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
+    users_wishlist = models.ManyToManyField(
+        User, related_name='users_wishlist', blank=True)
     has_sizes = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
