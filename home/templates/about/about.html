@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row justify-content-center h-100">
+        <div class="col-7 col-md-6 my-auto">
+
+            <h3 class="center">Welcome To <span class="logo-black">Ink</span><span class="logo-red">T</span><span
+                    class="logo-black">hreadable</span>!</h3>
+            <div>
+                <p>
+                    Tshirt Store was created in the frustration over the standardized offerings from the multiple
+                    retail stores and the abundance of soulless fashion brands.
+                    Our ambition is to offer an amazing variety of designs with excellent quality.
+                    The printed t-shirt is a fantastic medium for people to express what they like, who they are and
+                    what they identify with.
+                    <br>
+                    No other garment can be changed and manipulated so easily.
+                    No other garment is as strong expression of the individual – that’s why we love t-shirts!
+                    We work with numerous new and established graphical designers to produce a truly unique product.
+                    Our range of designs is constantly evolving, and we’ve got a little something for everyone. The
+                    garments and accessories we produce are interpretations of pop cultural influences. In addition
+                    to our own work we benefit from our creative community – a growing network of designers from all
+                    around the world.
+                </p>
+                <h4>
+                    <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">
+                        Return to shop
+                    </a>
+                </h4>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

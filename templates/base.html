@@ -41,16 +41,12 @@
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <a href="{% url 'home' %}" class="text-jet" aria-label="home">
-                    <img src="{% static '/media/logo.png'%}" alt="logo" class="logo-image">
+                <a href="{% url 'home' %}" class="nav-link main-logo-link">
+                    <h2 class="logo-font text-black my-0"><strong><span class="logo-black">Ink</span><span class="logo-red">T</span>hreadable</strong></h2>
                 </a>
-               
             </div>
-            
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                    
                     <li class="list-inline-item dropdown">
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
@@ -61,10 +57,9 @@
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a>
+                                    <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
                                 {% endif %}
                                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'wishlist'  %}" class="dropdown-item">My Wishlist</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
                                 <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
@@ -73,9 +68,9 @@
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_cart' %}">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link" href="{% url 'view_cart' %}">
                             <div class="text-center">
-                                <div><i class="fas fa-shopping-cart fa-lg"></i></div>
+                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="my-0">
                                     {% if grand_total %}
                                         ${{ grand_total|floatformat:2 }}
@@ -124,10 +119,32 @@
 
     {% block content %}
     {% endblock %}
+    
     {% include 'includes/footer.html' %}
     {% block postloadjs %}
     <script type="text/javascript">
         $('.toast').toast('show');
+    </script>
+    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
+    </script>
+    <script type='text/javascript'>
+        (function ($) {
+            window.fnames = new Array();
+            window.ftypes = new Array();
+            fnames[0] = 'EMAIL';
+            ftypes[0] = 'email';
+            fnames[1] = 'FNAME';
+            ftypes[1] = 'text';
+            fnames[2] = 'LNAME';
+            ftypes[2] = 'text';
+            fnames[3] = 'ADDRESS';
+            ftypes[3] = 'address';
+            fnames[4] = 'PHONE';
+            ftypes[4] = 'phone';
+            fnames[5] = 'BIRTHDAY';
+            ftypes[5] = 'birthday';
+        }(jQuery));
+        var $mcj = jQuery.noConflict(true);
     </script>
     {% endblock %}
 
