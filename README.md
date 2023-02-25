@@ -331,10 +331,7 @@ My hand in is today and I have not been able to resolve this problem.
 | If Searched Product             | Display | Only display products with search term in title                                                | Pass      |
 | If Searched Product             | Display | Display number of products found for " searched product"                                       | Pass      |
 | If Superuser in session:        |         |                                                                                                |           |
-| Add New Product Button          | Click   | Redirect to add product page                                                                   | Pass      |
-| Edit product link               | Click   | Redirect to edit product page                                                                  | Pass      |
 | Delete product link             | Click   | Open delete confirmation  page                                                                 | Pass      |
-| Confirm Delete -  cancel button | Click   | Redirect to home decor page                                                                    | Pass      |
 | Confirm Delete -  delete button | Click   | Delete product                                                                                 | Pass      |
 | Confirm Delete -  delete button | Click   | Success message appears confirming product deleted successfully                                | Pass      |
 
