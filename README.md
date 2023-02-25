@@ -58,6 +58,19 @@ They main color pallet for this site is white, black, red and tanned red to get 
 
 On the Home page i incorpated a backround that incorporates pop culter/cult classic images to follow the them of the store.
 
+### Wireframes
+
+#### Home Page
+![wireframes image](/media/home.png)
+
+#### Product Page
+![wireframes image](/media/products.png)
+
+#### Cart Page
+![wireframes image](/media/cart.png)
+
+#### Product Detail Page
+![wireframes image](/media/about.png)
 
 ## Agile Methodology
 Github projects was used to manage the development process using an agile approach. Please see link to project board [here]()
