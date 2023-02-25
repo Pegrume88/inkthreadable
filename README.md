@@ -169,13 +169,219 @@ As a site user, I can signup to a newsletter the form is located in the footer.
 
 ## Device Testing
 
-The website was viewed on a variety of devices such as Desktop, Laptop, iPhone 8, iPhoneXR and iPad to ensure responsiveness on various screen sizes in both portrait and landscape mode. The website performed as intended. The responsive design was also checked using Chrome developer tools across multiple devices with structural integrity holding for the various sizes.
+The website was viewed on a variety of devices such as Desktop, Laptop, iPhone 8, iPhoneXR and iPad to ensure responsiveness on various screen sizes. The website performed as intended. The responsive design was also checked using Chrome developer tools across multiple devices with structural integrity holding for the various sizes.
 
 ## Browser Testing
 
 The Website was tested on Google Chrome, Firefox, Safari browsers with no issues noted.
 
 
+## Validator Testing
+
+### HTML
+All HTML pages were run through the [W3C HTML Validator](https://validator.w3.org/). See results in below table.
+
+| Page                           | Logged Out | Logged In |
+|--------------------------------|------------|-----------|
+| Home                           | No Errors  | No Errors |
+| Products                       | No Errors  | No Errors |
+| Product Detail                 | No Errors  | No Errors |
+| Add Product                    | N/A        | Note      |
+| Edit Product                   | N/A        | Note      |
+| Delete Product                 | N/A        | No Errors |
+| wishlist                       | N/A        | No Errors |
+| cart                           | No Errors  | No Errors |
+| Checkout                       | No Errors  | No Errors |
+| Checkout Success               | No Errors  | No Errors |
+| Profile                        | N/A        | No Errors |
+| Contact                        | No Errors  | No Errors |
+| About                          | N/A        | No Errors |
+| Sign In                        | No Errors  | N/A       |
+| Sign Up                        | No Errors  | N/A       |
+| Log Out                        | N/A        | No Errors |
+| Password Reset                 | No Errors  | N/A       |
+| 404.html                       | No errors  | No errors |
+|_________________________________________________________|
+Note: Image upload widget errors
+
+Forms that include an image upload field show the same error below. This relates to the image upload widget on the form.
+
+### CSS
+
+No errors were found when passing my CSS files through the official [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+
+-base.css: Congratulations! No Error Found.
+
+-checkout.css: Congratulations! No Error Found.
+
+-profile.css: Congratulations! No Error Found.
+
+### JSHINT
+All Javascript was passed through [Jshint](https://jshint.com/) with no issues.
+
+**Base**
+- No errors detected
+
+**Products**
+- No errors detected
+
+**Profile**
+- No errors detected
+
+**Checkout**
+- No errors detected
+
+**cart**
+- No errors detected
+
+**Quantity Input**
+-No Errors detected
+
+**Image Selector**
+-No errors detected
+
+### Python Validation
+Python testing was done using  [Python syntax checker](https://extendsclass.com/python-tester.html) to ensure there were no syntax errors.
+
+The only errors displayed can be ignored. The majority are in automatically generated files with the exception of env.py and webhooks.py. 
+
+I have ignored the the formatting errors related to env.py as they relate to my Secret Keys and Database URL being to long. This file is not committed to github.
+
+
+### Lighthouse
+
+Lighthouse validation was run but would not complete the process and timeout due to an error with light house. This was attempted a few times with the same result. I have never seen this before on any of my previous projects. It may be due to my Interenet. AS I am in Liberia West Africa at the moment, the interenet provided is increadably slow.
+My hand in is today and I have not been able to resolve this problem.
+
+
+## Manual Testing
+
+### Home Page
+
+| Element                | Action | Expected Result                    | Pass/Fail |
+|------------------------|--------|------------------------------------|-----------|
+| Shop Now Button        | Click  | Open products page                 | Pass      |
 
 
 
+### All Auth Pages 
+
+
+
+| Element                         | Action                                    | Expected Result                              | Pass/Fail |
+|---------------------------------|-------------------------------------------|----------------------------------------------|-----------|
+| Sign Up                         |                                           |                                              |           |
+| Sign in link                    | Click                                     | Redirect to sign in page                     | Pass      |
+| Email field                     | Insert incorrect format                   | On submit: form won't submit                 | Pass      |
+| Email field                     | Insert incorrect format                   | Error message displays                       | Pass      |
+| Email field                     | Insert correct format                     | On submit: form submit                       | Pass      |
+| Email field                     | Leave empty                               | On submit: form won't submit                 | Pass      |
+| Email field                     | Insert duplicate email                    | On submit: form won't submit                 | Pass      |
+| Email field                     | Insert duplicate email                    | Error message displays                       | Pass      |
+| Email Confirmation field        | Insert different email                    | On submit: form won't submit                 | Pass      |
+| Email Confirmation field        | Insert different email                    | Error message displays                       | Pass      |
+| Username field                  | Leave empty/incorrect format              | On submit: form won't submit                 | Pass      |
+| Username field                  | Leave empty/incorrect format              | Error message displays                       | Pass      |
+| Username field                  | Insert correct format                     | On submit: form submit                       | Pass      |
+| Username field                  | Insert duplicate username                 | On submit: form won't submit                 | Pass      |
+| Username field                  | Insert duplicate username                 | Error message displays                       | Pass      |
+| Password field                  | Insert incorrect format/length            | On submit: form won't submit                 | Pass      |
+| Password field                  | Insert incorrect format/length            | Error message displays                       | Pass      |
+| Password field                  | Passwords don't match                     | On submit: form won't submit                 | Pass      |
+| Password field                  | Passwords don't match                     | Error message displays                       | Pass      |
+| Password field                  | Insert correct format and passwords match | On submit: form submit                       | Pass      |
+| Sign Up button(form valid)      | Click                                     | Form submit                                  | Pass      |
+| Sign Up button(form valid)      | Click                                     | Redirect to Verify Email Address page        | Pass      |
+| Sign Up button(form valid)      | Click                                     | Alert message confirming email sent appears  | Pass      |
+| Confirmation Email Confirm Link | Click                                     | Open Confirm Email Address Page              | Pass      |
+| Confirm Button                  | Click                                     | Success message confirming new user appears  | Pass      |
+| Confirm Button                  | Click                                     | Redirect to sign in page                     | Pass      |
+|                                 |                                           |                                              |           |
+| Log in                          |                                           |                                              |           |
+| Sign up link                    | Click                                     | Redirect to sign up page                     | Pass      |
+| Username field                  | Leave empty                               | On submit: form won't submit                 | Pass      |
+| Username field                  | Leave empty                               | Error message displays                       | Pass      |
+| Username field                  | Insert wrong username                     | On submit: form won't submit                 | Pass      |
+| Username field                  | Insert wrong username                     | Error message displays                       | Pass      |
+| Password field                  | Leave empty                               | On submit: form won't submit                 | Pass      |
+| Password field                  | Leave empty                               | Error message displays                       | Pass      |
+| Password field                  | Insert wrong password                     | On submit: form won't submit                 | Pass      |
+| Password field                  | Insert wrong password                     | Error message displays                       | Pass      |
+| Login button(form valid)        | Click                                     | Form submit                                  | Pass      |
+| Login button(form valid)        | Click                                     | Redirect to home page                        | Pass      |
+| Login button(form valid)        | Click                                     | Success message confirming login appears     | Pass      |
+| Forgot Password Link            | Click                                     | Redirect to Password Reset page              | Pass      |
+| Email field                     | Leave empty/incorrect format              | On submit: form submit                       | Pass      |
+| Reset My Password Button        | Click                                     | Confirmation message that email sent         | Pass      |
+| Password Reset Email Link       | Click                                     | Open Change Password Page                    | Pass      |
+| Change Password Button          | Click                                     | Success message confirming Password Changed  | Pass      |
+|                                 |                                           |                                              |           |
+| Sign Out Confirmation           |                                           |                                              |           |
+| Sign Out  button                | Click                                     | Redirect to homepage                         | Pass      |
+| Sign Out  button                | Click                                     | Success message confirming Sign Out  appears | Pass      |
+
+### Products
+
+| Element                         | Action  | Expected Result                                                                                | Pass/Fail |
+|---------------------------------|---------|------------------------------------------------------------------------------------------------|-----------|
+| Sort By' gender and category    | Click   | Open 'sort by' options                                                                         | Pass      |
+| If Category Selected            | Display | Pages heading changes to show items assigned the category selected                             | Pass      |
+| Product Number                  | Display | Displays correct number of products on page                                                    | Pass      |
+| Product Card                    | Click   | Redirect to product detail page                                                                | Pass      |
+| If Searched Product             | Display | Only display products with search term in title                                                | Pass      |
+| If Searched Product             | Display | Display number of products found for " searched product"                                       | Pass      |
+| If Superuser in session:        |         |                                                                                                |           |
+| Add New Product Button          | Click   | Redirect to add product page                                                                   | Pass      |
+| Edit product link               | Click   | Redirect to edit product page                                                                  | Pass      |
+| Delete product link             | Click   | Open delete confirmation  page                                                                 | Pass      |
+| Confirm Delete -  cancel button | Click   | Redirect to home decor page                                                                    | Pass      |
+| Confirm Delete -  delete button | Click   | Delete product                                                                                 | Pass      |
+| Confirm Delete -  delete button | Click   | Success message appears confirming product deleted successfully                                | Pass      |
+
+
+### Product Detail
+
+| Element                  | Action                    | Expected Result                                                                              | Pass/Fail |
+|--------------------------|---------------------------|----------------------------------------------------------------------------------------------|-----------|
+| Product Content          | Display                   | Display correct product image, description, category, gender, price, product details         | Pass      |
+| Keep Shopping button     | Click                     | Redirect to home decor page                                                                  | Pass      |
+| Add to cart button       | Click                     | Add item to bag                                                                              | Pass      |
+| Add to cart button       | Click                     | Toast Success appears                                                                        | Pass      |
+| Add to cart button       | Click                     | Product and quantity visible in toast success                                                | Pass      |
+| If Superuser in session: |                           |                                                                                              |           |
+| Edit product link        | Click                     | Redirect to edit product page                                                                | Pass      |
+| Delete product link      | Click                     | Open delete confirmation  page                                                               | Pass      |
+| Add to wishlist.         | Click                     | Add product to wishlist.                                                                     | Pass      |
+
+### Cart
+
+| Element                                                       | Action              | Expected Result                                        | Pass/Fail |
+|---------------------------------------------------------------|---------------------|--------------------------------------------------------|-----------|
+| No cart Items                                                 |                     |                                                        |           |
+| Keep Shopping button                                          | Click               | Redirect to home decor page                            | Pass      |
+| cart Items                                                    |                     |                                                        |           |
+| Qty control buttons                                           | Click               | Increase/decrease quantity                             | Pass      |
+| Qty control buttons                                           | Click               | Minus button disabled if quantity is 1                 | Pass      |
+| Qty control buttons                                           | Click               | Plus button disabled if quantity is 99                 | Pass      |
+| Qty control buttons                                           | Manually Input  >99 | Error message appears when refresh button is clicked   | Pass      |
+| Qty control buttons                                           | Manually Input  <1  | Shopping bag is emptied when refresh button is clicked | Pass      |
+| update button                                                 | Click               | Update bag item quantity                               | Pass      |
+| update button                                                 | Refresh Icon button | Updated confirmation toast appears                     | Pass      |
+| remove button                                                 | Click               | Remove item from bag                                   | Pass      |
+| remove button                                                 | Click               | Removed confirmation toast appears                     | Pass      |
+| Line item subtotal / cart total / Delivery cost / Grand Total | Calculate           | All numbers are calculated correctly                   | Pass      |
+| Continue shopping button                                      | Click               | Redirect to products page                              | Pass      |
+| Secure Checkout button                                        | Click               | Redirect to checkout page                              | Pass      |
+
+### Profile
+
+| Element                | Action            | Expected Result                                                                                                                | Pass/Fail |
+|------------------------|-------------------|--------------------------------------------------------------------------------------------------------------------------------|-----------|
+| Open Profile Page      | Access            | If a user tries to access the profile page (by changing the url) without being signed in they are redirected to the login page | Pass      |
+| Form fields            | On load           | fields populated with user default info(if previously saved)                                                                   | Pass      |
+| All input fields       | Leave blank       | On submit: form submits                                                                                                        | Pass      |
+| All input fields       | Just whitespace   | On submit: form submits                                                                                                        | Pass      |
+| All input fields       | Fill in correctly | On submit: form submits                                                                                                        | Pass      |
+| Form Dropdown          | Click             | Show dropdown options                                                                                                          | Pass      |
+| Update button          | Click             | Form submits                                                                                                                   | Pass      |
+| Update button          | Click             | Success message appears confirming profile successfully updated                                                                | Pass      |
