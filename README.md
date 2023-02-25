@@ -82,7 +82,7 @@ The Epics listed above were documented within the Github project as Milestones. 
 
 Two relational databases were used to create this site - during production SQLite was used and then Postgres was used for the deployed Render version. Below is an image of how the database models relate to each other:
 
-![Database Schema](docs/readme_images/database_schema.png)
+![Database Schema](/media/inkthreadable.png)
 
 ## Security Features and Defensive Design
 ### User Authentication
