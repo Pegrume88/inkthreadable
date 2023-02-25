@@ -395,3 +395,55 @@ My hand in is today and I have not been able to resolve this problem.
 | Form Dropdown          | Click             | Show dropdown options                                                                                                          | Pass      |
 | Update button          | Click             | Form submits                                                                                                                   | Pass      |
 | Update button          | Click             | Success message appears confirming profile successfully updated                                                                | Pass      |
+
+## Deployment
+
+### Deployment On Render
+
+- To Deploy on render I connected my git hub account to Render.
+
+- I then selected the repositry and conntected it to render.
+
+- Added my environment variables.
+
+
+- created a build.sh file
+- installed gunicorn
+
+- Then automatically deploy my local site to render.
+
+### Attach Postgress Database
+Copy the DATABASE_URL located in Config Vars in the Settings Tab.
+Go back to your IDE and install 2 more requirements:
+
+- pip3 install dj_databse_url
+- pip3 install psycopg2-binary
+
+Create requirements.txt file by typing pip3 freeze --local > requirements.txt
+Add the DATABASE_URL value and your chosen SECRET_KEY value to the env.py file.
+In settings.py file import dj_database_url, comment out the default configurations within database settings and add the following:
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+}
+
+- Run migrations and create a superuser for the new database.
+- Create an if statement in settings.py to run the postgres database when using the app on render or sqlite if not
+    if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3',
+            }
+    }
+Create requirements.txt file by typing pip3 freeze --local > requirements.txt
+
+Create a file named "Procfile" in the main directory and add the following: web: gunicorn project-name.wsgi:application
+
+
+Push these changes to Github
+
+-
