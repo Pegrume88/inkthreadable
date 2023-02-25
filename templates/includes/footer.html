@@ -8,7 +8,7 @@
                 <!-- Grid column -->
                 <div class="col-md-2">
                     <h6 class="text-uppercase font-weight-bold">
-                        <a href="#!" class="text-white">About us</a>
+                        <a href="{% url 'about'%}" class="text-white">About us</a>
                     </h6>
                 </div>
                 <!-- Grid column -->
@@ -16,7 +16,7 @@
                 <!-- Grid column -->
                 <div class="col-md-2">
                     <h6 class="text-uppercase font-weight-bold">
-                        <a href="#!" class="text-white">Products</a>
+                        <a href="{% url 'products' %}" class="text-white">Products</a>
                     </h6>
                 </div>
                 <!-- Grid column -->
@@ -24,7 +24,7 @@
                 <!-- Grid column -->
                 <div class="col-md-2">
                     <h6 class="text-uppercase font-weight-bold">
-                        <a href="#!" class="text-white">Awards</a>
+                        <a href="{% url 'home' %}" class="text-white">Home</a>
                     </h6>
                 </div>
                 <!-- Grid column -->
@@ -32,17 +32,13 @@
                 <!-- Grid column -->
                 <div class="col-md-2">
                     <h6 class="text-uppercase font-weight-bold">
-                        <a href="#!" class="text-white">Help</a>
+                        <a href="{% url 'contact' %}" class="text-white">Contact Us</a>
                     </h6>
                 </div>
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-2">
-                    <h6 class="text-uppercase font-weight-bold">
-                        <a href="#!" class="text-white">Contact</a>
-                    </h6>
-                </div>
+                
                 <!-- Grid column -->
             </div>
             <!-- Grid row-->
@@ -64,7 +60,7 @@
                                 <h2>Subscribe</h2>
                                 <hr>
                                 <p>Sign up to our monthly newsletter to keep up to date with all of our new stock!</p>
-                                <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                                
                                 <div class="mc-field-group">
                                     <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
                                     </label>
@@ -80,9 +76,9 @@
                                 <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
                                         name="b_18f469c7018a9163baa81216b_34b4d0f3af" tabindex="-1" value=""></div>
                                 <div class="optionalParent">
-                                    <div class="clear foot">
+                                    <div class="clear foot display-inline">
                                         <input type="submit" value="Subscribe" name="subscribe"
-                                            id="mc-embedded-subscribe" class="button">
+                                            id="mc-embedded-subscribe" class="btn btn-primary">
 
                                     </div>
                                 </div>

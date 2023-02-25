@@ -15,7 +15,9 @@ body {
 }
 
 
-
+a {
+    color: #222;
+}
 
 #mc_embed_signup {
     background: #fff;
