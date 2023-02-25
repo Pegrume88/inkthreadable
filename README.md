@@ -8,6 +8,12 @@ To test this system, test card details can be used. A list of these can be found
 
 The live link can be found here - [InkThreadable](https://inkthreadable.onrender.com)
 
+![responsive image](/media/responsive.png)
+
+
+## Facebook Page
+
+![facebook image](/media/facebook.png)
 ## User Experience (UX)
 
 A visitor to InkThreadable would be someone who is most likely a young adult who is interested in vintages T-shirt designs.
