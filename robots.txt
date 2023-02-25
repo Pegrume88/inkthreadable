@@ -1,0 +1,4 @@
+User-agent: *
+Dissallow: /accounts/
+Dissallow: /cart/
+Sitemap: https://inkthreadable.onrender.com/sitemap.xml
