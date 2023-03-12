@@ -88,9 +88,7 @@
                     {% endif %}                    
                     {% if product.gender %}
                     <p class="mb-0">
-                        <a class="text-muted" href="{% url 'products' %}?products={{ product.gender }}">
-                            <i class="fas fa-tag mr-1"></i> Gender - {{ product.gender }}
-                        </a>
+                        <i class="fas fa-tag mr-1"></i> Gender - {{ product.gender }}
                     </p>
                     {% endif %}
                     
