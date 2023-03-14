@@ -121,7 +121,9 @@ nav {
     
     
 }
-
+.w-100 {
+    width: 100%;
+}
 /* from Bulma */
 .icon {
     align-items: center;
