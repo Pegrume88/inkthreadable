@@ -23,15 +23,24 @@
 
                     <h3 style="text-align: center;">We're here to help!.</span></h3>
                     <p>
-                        For all enquiries please contact us via our email address or through our facebook page.
+                        For all enquiries please contact us.
                     </p>
                     <br>
                     <br>
-                    <p>EMAIL: store@inkthreadable.com</p>
-                    <p>
-                        <a href="https://www.facebook.com/" target="_blank" rel="noopener"
-                        aria-label="Visit our Facebook page (opens in new tab)"><i class="fab fa-facebook"></i></a>
-                    </p>
+                    <div>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <label for="name">Name:</label>
+                            <input type="text" name="name" required><br><br>
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" required><br><br>
+                            <label for="phone">Phone:</label>
+                            <input type="text" name="phone"><br><br>
+                            <label for="message">Message:</label>
+                            <textarea name="message" rows="4" required></textarea><br><br>
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
                     <h4>
                         <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">
                             Return to shop
