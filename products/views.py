@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponseRedirect
-from .models import Product, Category, Review
+from .models import Product, Category, Review, Like
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import CreateView
 from django.db.models import Q
 from django.contrib import messages
 from .filters import ProductFilter, ProductCategoryFilter, SearchFilter
-from .forms import ProductForm
+from .forms import ProductForm, ReviewForm
 
 
 def category_products(request, category_id):
@@ -80,30 +82,41 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    reviews = Review.objects.filter(product=product)
+    try:
+        product_like = Like.objects.get(product=product)
+        liked = product_like is not None and request.user in product_like.user.all()
+    except Exception as e:
+        liked = False
+    form = ReviewForm()
 
     if request.method == 'POST':
-        review_rating = request.POST.get('review_rating', 3)
-        comment = request.POST.get('comment', '')
+        rating = request.POST.get('rating', 3)
+        content = request.POST.get('content', '')
 
-        if comment:
-            reviews = Review.objects.filter(created_by=request.user, product=product)
+        if content:
+            reviews = Review.objects.filter(
+                user=request.user, product=product)
 
             if reviews.count() > 0:
                 review = reviews.first()
-                review.review_rating = review_rating
-                review.comment = comment
+                review.rating = rating
+                review.content = content
                 review.save()
             else:
                 review = Review.objects.create(
                     product=product,
-                    review_rating=review_rating,
-                    comment=comment,
-                    created_by=request.user
+                    rating=rating,
+                    content=content,
+                    user=request.user
                 )
-                return redirect('product')
-    
+                #return redirect('product')
+
+    product_rating = product.get_rating()
     context = {
         'product': product,
+        'product_rating': product_rating,
+        'liked': liked
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -180,19 +193,50 @@ def delete_product(request, product_id):
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
 
+
 @login_required
 def wishlist(request):
     products = Product.objects.filter(users_wishlist=request.user)
     return render(request, "products/wishlist.html", {'wishlist': products})
+
 
 @login_required()
 def add_to_wishlist(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     if product.users_wishlist.filter(id=request.user.id).exists():
         product.users_wishlist.remove(request.user)
-        messages.success(request, product.name + " has been removed from your WishList")
+        messages.success(request, product.name +
+                         " has been removed from your WishList")
     else:
         product.users_wishlist.add(request.user)
-        messages.success(request, "Added " + product.name + " to your WishList")
+        messages.success(request, "Added " +
+                         product.name + " to your WishList")
     return HttpResponseRedirect(request.META["HTTP_REFERER"])
 
+
+@login_required()
+def like_product(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    product_likes, created = Like.objects.get_or_create(product=product)
+    if request.user not in product_likes.user.all():
+        product_likes.user.add(request.user)
+        messages.success(request, product.name +
+                         " has been liked")
+    else:
+        product_likes.user.remove(request.user)
+        messages.success(request,
+                         product.name + " disliked")
+    product_likes.save()
+    return HttpResponseRedirect(request.META["HTTP_REFERER"])
+
+#def add_review(request, product_id):
+    #product = get_object_or_404(Product, pk=product_id)
+    #if request.method == 'POST':
+        #form = ReviewForm(request.POST)
+        #if form.is_valid():
+        #    review = form.save(commit=False)
+        #    review.product = product
+        #    review.save()
+
+    #return render(request, 'products/product_detail.html', context)
+    

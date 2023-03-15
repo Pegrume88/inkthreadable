@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class Category(models.Model):
@@ -38,28 +39,35 @@ class Product(models.Model):
 
     def get_rating(self):
         total_rating = 0
-
-        for review in self.reviews.all():
-            total_rating += review.review_rating
+        
+        for review in Review.objects.filter(product=self) :
+            total_rating += review.rating
             
         if total_rating > 0:
             return total_rating / self.reviews.count()
             
-        return 0
+        return total_rating
         
     def __str__(self):
         return self.name
 
 
 class Review(models.Model):
-    product = models.ForeignKey(
-        Product, related_name='reviews', on_delete=models.CASCADE)
-    review_rating = models.IntegerField(default=3)
-    comment = models.TextField()
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='reviews')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    content = models.TextField()
+    rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
     created_at = models.DateTimeField(auto_now_add=True)
-    
-    def __str__(self):
-        return str(self.id)
+    updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f'{self.user.username} - {self.product.name}'
+
+
+class Like(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='like_product')
+    user = models.ManyToManyField(User)
 
