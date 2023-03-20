@@ -100,9 +100,9 @@
                     
                     <a href="{% url 'like_product' product.id %}">
                         {% if liked %}
-                            unlike
+                        <i class="fa-solid fa-heart"></i>
                         {% else %}
-                            like 
+                        <i class="fa-regular fa-heart"></i>
                         {% endif %}
 
                     </a>
